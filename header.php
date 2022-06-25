@@ -5,7 +5,7 @@
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2">
-                <li><img src="../branding/img_2.png" width="200px"></li>
+                <li><img src="assets/images/branding/img_2.png" width="200px"></li>
 
                 <!--TODO №3 сделать ссылки на категории основные 4-5 штук-->
                 <li><a href="#" class="nav-link px-2 text-black">Pricing</a></li>
