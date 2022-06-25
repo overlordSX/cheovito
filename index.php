@@ -19,7 +19,7 @@
     $sql = "INSERT INTO role (name, description) VALUES ('пользователь', 'обладает обычными правами доступа')";
     $query = $connection->prepare($sql);
 
-    $query->execute([])
+
 
 ?>
 
