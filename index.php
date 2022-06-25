@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cheovito</title>
+    <title>CheOvito</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="assets/css/main.css" rel="stylesheet" crossorigin="anonymous">
@@ -14,18 +14,11 @@
 
 <?php include("header.php"); ?>
 
-<?php
-    $connection = new PDO("mysql:host=localhost; dbname=bulletin_board; charset=utf8", "root", "root");
-    $sql = "INSERT INTO role (name, description) VALUES ('пользователь', 'обладает обычными правами доступа')";
-    $query = $connection->prepare($sql);
+<?php include("app/database/connection.php");?>
 
 
 
-?>
-
-
-
-
+<?php include("footer.php");?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
