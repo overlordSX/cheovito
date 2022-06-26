@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ad`
+-- Структура таблицы `advertisement`
 --
 
 CREATE TABLE `ad` (
@@ -223,7 +223,7 @@ CREATE TABLE `subcategory` (
 --
 
 --
--- Индексы таблицы `ad`
+-- Индексы таблицы `advertisement`
 --
 ALTER TABLE `ad`
   ADD PRIMARY KEY (`id_ad`),
@@ -335,7 +335,7 @@ ALTER TABLE `subcategory`
 --
 
 --
--- AUTO_INCREMENT для таблицы `ad`
+-- AUTO_INCREMENT для таблицы `advertisement`
 --
 ALTER TABLE `ad`
   MODIFY `id_ad` int NOT NULL AUTO_INCREMENT;
@@ -411,7 +411,7 @@ ALTER TABLE `subcategory`
 --
 
 --
--- Ограничения внешнего ключа таблицы `ad`
+-- Ограничения внешнего ключа таблицы `advertisement`
 --
 ALTER TABLE `ad`
   ADD CONSTRAINT `ad_ibfk_1` FOREIGN KEY (`id_profile`) REFERENCES `profile` (`profile_id`) ON DELETE CASCADE ON UPDATE CASCADE,

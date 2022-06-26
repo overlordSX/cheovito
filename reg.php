@@ -42,6 +42,7 @@
             <input type="password" class="form-control" id="floatingPassword" placeholder="Продублируйте пароль">
             <label for="floatingPassword">Продублируйте пароль</label>
         </div>
+        <!--TODO №7 добавить регистрацию с фото-->
         <div class="py-1">
             <button class="w-40 btn btn-lg btn-outline-primary py-1" type="submit">Зарегистрироваться</button>
         </div>

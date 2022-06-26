@@ -1,6 +1,3 @@
-<?php
-?>
-
 <nav class="py-2 bg-light">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-lg-start">
@@ -31,7 +28,7 @@
 
 <header class="py-2 bg-white text-black">
     <div class="container">
-        <div class="row">
+        <div class="row d-flex flex-wrap">
             <div class="btn-group" role="group">
                 <div class="col-auto btn-group">
                     <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton"
