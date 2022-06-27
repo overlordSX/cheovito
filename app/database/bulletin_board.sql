@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 25 2022 г., 17:18
+-- Время создания: Июн 27 2022 г., 09:13
 -- Версия сервера: 8.0.29
 -- Версия PHP: 8.1.5
 
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `advertisement`
+-- Структура таблицы `ad`
 --
 
 CREATE TABLE `ad` (
@@ -126,9 +126,18 @@ CREATE TABLE `profile` (
   `last_name` varchar(60) NOT NULL,
   `phone_number` varchar(11) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `password` varchar(32) NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `registration_date` date NOT NULL,
   `activity_status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `profile`
+--
+
+INSERT INTO `profile` (`profile_id`, `first_name`, `last_name`, `phone_number`, `email`, `password`, `registration_date`, `activity_status`) VALUES
+(2, 'Андрей', 'Соловьев', '89095038010', 'colovev95@gmail.com', '$2y$10$yiTXoCCAXv5zAJsmN/bOE.C8PreWnaRfSN5YGzRTFCGoX3X7rjfFi', '2022-06-27', 0),
+(6, 'Андрей', 'Соловьев', '89095038011', 'coloveo95@gmail.com', '$2y$10$1H7CCMmn88oDtJ8Cm3mzi.MFvqAeay5RYlwt5DqpleB2Ta0pz3Voi', '2022-06-27', 1);
 
 -- --------------------------------------------------------
 
@@ -170,8 +179,8 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`role_id`, `name`, `description`) VALUES
-(2, 'администратор', 'обладает максимальными правами доступа'),
-(4, 'пользователь', 'обладает обычными правами доступа');
+(1, 'Администратор', 'Может удалять любые объявления из БД.'),
+(2, 'Пользователь', 'Обычный пользователь, может просматривать все объявления, размещать и удалять свои объявления.');
 
 -- --------------------------------------------------------
 
@@ -223,7 +232,7 @@ CREATE TABLE `subcategory` (
 --
 
 --
--- Индексы таблицы `advertisement`
+-- Индексы таблицы `ad`
 --
 ALTER TABLE `ad`
   ADD PRIMARY KEY (`id_ad`),
@@ -335,7 +344,7 @@ ALTER TABLE `subcategory`
 --
 
 --
--- AUTO_INCREMENT для таблицы `advertisement`
+-- AUTO_INCREMENT для таблицы `ad`
 --
 ALTER TABLE `ad`
   MODIFY `id_ad` int NOT NULL AUTO_INCREMENT;
@@ -374,7 +383,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT для таблицы `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `profile_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `profile_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `profile_photo`
@@ -392,7 +401,7 @@ ALTER TABLE `region`
 -- AUTO_INCREMENT для таблицы `role`
 --
 ALTER TABLE `role`
-  MODIFY `role_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `role_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `streets`
@@ -411,7 +420,7 @@ ALTER TABLE `subcategory`
 --
 
 --
--- Ограничения внешнего ключа таблицы `advertisement`
+-- Ограничения внешнего ключа таблицы `ad`
 --
 ALTER TABLE `ad`
   ADD CONSTRAINT `ad_ibfk_1` FOREIGN KEY (`id_profile`) REFERENCES `profile` (`profile_id`) ON DELETE CASCADE ON UPDATE CASCADE,
