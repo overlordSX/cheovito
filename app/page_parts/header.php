@@ -1,8 +1,10 @@
+<?php include("path.php");?>
+
 <nav class="py-2 bg-light">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2">
-                <li><a href="index.php"><img src="assets/images/branding/img_2.png" width="200px"></a></li>
+                <li><a href="<?php echo BASE_URL?>"><img src="../../assets/images/branding/img_2.png" width="200px"></a></li>
 
                 <!--TODO №3 сделать ссылки на категории основные 4-5 штук-->
                 <li><a href="#" class="nav-link px-2 text-black">Pricing</a></li>
@@ -15,7 +17,7 @@
             <!--            </form>-->
 
             <div class="text-end">
-                <a href="login.php">
+                <a href="<?php echo LOGIN_URL?>">
                     <button type="button" class="btn btn-outline-dark me-2">Вход и регистрация</button>
                 </a>
                 <a href="create_ad.php">
